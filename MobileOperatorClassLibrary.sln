@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileOperatorClassLibrary", "MobileOperatorClassLibrary\MobileOperatorClassLibrary.csproj", "{73A6B00A-8B76-400D-961E-5B1F33AF8125}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileOperatorDesktop", "MobileOperatorDesktop\MobileOperatorDesktop.csproj", "{2F87BFD5-4B63-488C-A478-B125983092E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73A6B00A-8B76-400D-961E-5B1F33AF8125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A6B00A-8B76-400D-961E-5B1F33AF8125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A6B00A-8B76-400D-961E-5B1F33AF8125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A6B00A-8B76-400D-961E-5B1F33AF8125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F87BFD5-4B63-488C-A478-B125983092E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F87BFD5-4B63-488C-A478-B125983092E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F87BFD5-4B63-488C-A478-B125983092E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F87BFD5-4B63-488C-A478-B125983092E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBF313FE-E0C2-4AC6-B210-0C8CD0E3463F}
+	EndGlobalSection
+EndGlobal

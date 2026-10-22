@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="MobileOperatorDesktop.Views.DetailsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MobileOperatorDesktop.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Клиент:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <ComboBox x:Name="ClientCombo" Width="300" Margin="0,0,15,0"
+                      DisplayMemberPath="FullName"
+                      SelectionChanged="ClientCombo_SelectionChanged"/>
+
+            <TextBlock Text="С:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <DatePicker x:Name="FromDate" Width="130" Margin="0,0,10,0"/>
+
+            <TextBlock Text="По:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <DatePicker x:Name="ToDate" Width="130" Margin="0,0,10,0"/>
+
+            <Button Content="Показать" Padding="10,5" Click="Show_Click"/>
+        </StackPanel>
+        <GroupBox Grid.Row="1" Header="Добавить звонок" Margin="0,0,0,10">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Номер:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBox x:Name="DestNumberBox" Width="150" Margin="0,0,15,0" Text="+79000000000"/>
+
+                <TextBlock Text="Длительность, сек:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBox x:Name="DurationBox" Width="80" Margin="0,0,15,0" Text="120"/>
+
+                <Button Content="Рассчитать и записать" Padding="10,5" Click="AddCall_Click"/>
+            </StackPanel>
+        </GroupBox>
+        <DataGrid x:Name="DetailsGrid" Grid.Row="2"
+                  AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="*"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding DateTime, StringFormat=g}" Width="*"/>
+                <DataGridTextColumn Header="Номер" Binding="{Binding DestinationNumber}" Width="*"/>
+                <DataGridTextColumn Header="Секунд" Binding="{Binding DurationSeconds}" Width="*"/>
+                <DataGridTextColumn Header="Тариф" Binding="{Binding UsedTariff.Name}" Width="*"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding Cost, StringFormat={}{0:C}}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Grid.Row="3" Header="Подключённые услуги клиента" Margin="0,10,0,0" Height="120">
+            <ListBox x:Name="ServicesList" DisplayMemberPath="Name"/>
+        </GroupBox>
+    </Grid>
+</UserControl>
